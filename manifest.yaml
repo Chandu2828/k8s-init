@@ -24,7 +24,7 @@ spec:
       serviceAccountName: roboshop-mysql 
       initContainers:
       - name: secret-reader 
-        image: amazon/aws-cli 
+        image: badouralix/aws-cli:latest 
         command:
         - sh # shell
         - -c # running command 
