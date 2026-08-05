@@ -29,7 +29,7 @@ spec:
         - sh # shell
         - -c # running command 
         - | 
-            aws secretmanager get-secret-value --secret-id \
+            aws secretsmanager get-secret-value --secret-id \
             roboshop1/dev/mysql_root_password  --query SecretString \
             --output text | jq -r '.MYSQL_ROOT_PASSWORD' > /secrets/mysql-secret.txt 
             echo "Secret fetched successfully"
