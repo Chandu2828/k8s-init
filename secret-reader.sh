@@ -4,12 +4,12 @@
 # 2. if exist export and remove 
 # 3. if doesn't exist throw the error 
 
-if [ -f /secrets/mysql-secret.txt]; then
+if [ -f /secrets/mysql-secret.txt ]; then
     ROOT_PASSWORD=$(cat /secrets/mysql-secret.txt)
     echo "Password accessed successfully"
 else 
-  echo "cant find the password"
-  exit 1 
+    echo "cant find the password"
+    exit 1 
 fi 
 
 export MYSQL_ROOT_PASSWORD=$ROOT_PASSWORD 
