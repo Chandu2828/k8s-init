@@ -30,8 +30,8 @@ spec:
         - -c # running command 
         - | 
             aws secretsmanager get-secret-value --secret-id \
-            roboshop1/dev/mysql_root_password  --query SecretString \
-            --output text | jq -r '.MYSQL_ROOT_PASSWORD' > /secrets/mysql-secret.txt 
+            roboshop1/dev/mysql_root_password --query SecretString \
+            --output text | jq -r '.MYSQL_ROOT_PASSWORD' > /secrets/mysql-secret.txt
             echo "Secret fetched successfully"
             cat /secrets/mysql-secret.txt
           # just for testing, we should not do this 
