@@ -24,7 +24,7 @@ spec:
       serviceAccountName: roboshop-mysql 
       initContainers:
       - name: secret-reader 
-        image: badouralix/aws-cli:latest 
+        image: amazon/aws-cli  
         command:
         - sh # shell
         - -c # running command 
@@ -40,7 +40,7 @@ spec:
           mountPath: /secrets 
       containers:
       - name: mysql 
-        image: chandu2828/mysql:v3
+        image: joindevops/mysql:5.0.0
         args: ["--mysql-native-password=ON"]
         volumeMounts:
         - name: mysql-secret 
